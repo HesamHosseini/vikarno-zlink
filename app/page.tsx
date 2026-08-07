@@ -4,7 +4,6 @@ import Link from "next/link";
 import { ExternalLink, FileText, Play, Camera } from "lucide-react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import type { Variants } from "framer-motion";
 
 export default function Home() {
     const projects = [
@@ -38,7 +37,7 @@ export default function Home() {
         },
     ];
 
-    const containerVariants: Variants = {
+    const containerVariants = {
         hidden: { opacity: 0 },
 
         visible: {
@@ -51,31 +50,31 @@ export default function Home() {
         },
     };
 
-    const itemVariants: Variants = {
+    const itemVariants = {
         hidden: { opacity: 0.1, y: 20 },
         visible: {
             opacity: 1,
             y: 0,
             transition: {
                 duration: 0.5,
-                ease: [0.22, 1, 0.36, 1], // cubic-bezier for easeOut
+                ease: [0.22, 1, 0.36, 1] as const, // cubic-bezier for easeOut
             },
         },
     };
 
-    const logoVariants: Variants = {
+    const logoVariants = {
         hidden: { opacity: 0, scale: 0.8 },
         visible: {
             opacity: 1,
             scale: 1,
             transition: {
                 duration: 0.6,
-                ease: [0.22, 1, 0.36, 1], // cubic-bezier for easeOut
+                ease: [0.22, 1, 0.36, 1] as const, // cubic-bezier for easeOut
             },
         },
     };
 
-    const headerVariants: Variants = {
+    const headerVariants = {
         hidden: { opacity: 0, y: -20 },
         visible: {
             opacity: 1,
