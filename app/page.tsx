@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { ExternalLink, FileText, Play, Camera } from "lucide-react";
 import Image from "next/image";
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
+import type { Variants } from "framer-motion";
 
 export default function Home() {
     const projects = [
