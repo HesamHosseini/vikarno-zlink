@@ -1,12 +1,17 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Vazirmatn as VazirMatn } from "next/font/google"
+import localFont from "next/font/local"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
-const _vazirMatn = VazirMatn({
-  subsets: ["arabic"],
-  weight: ["400", "500", "600", "700"],
+// Self-hosted (rather than fetched from Google Fonts at build time) so the
+// build doesn't depend on outbound network access to fonts.googleapis.com.
+// Vazirmatn is a variable font, so one file covers the whole weight range.
+const _vazirMatn = localFont({
+  src: "./fonts/vazirmatn-arabic.woff2",
+  weight: "100 900",
+  style: "normal",
+  display: "swap",
 })
 
 export const metadata: Metadata = {
